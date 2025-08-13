@@ -11,10 +11,6 @@ import { InvestmentService } from '../investment.service';
   styleUrl: './investment-results.component.css'
 })
 export class InvestmentResultsComponent {
-  @Input({ required: true }) initialInvestment?: string;
-  @Input({ required: true }) annualInvestment?: string;
-  @Input({ required: true }) expectedReturn?: string;
-  @Input({ required: true }) duration?: string;
 
   private investmentService = inject(InvestmentService)
   

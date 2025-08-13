@@ -37,12 +37,7 @@
 </form>
 
 @if (calculated) {
-<app-investment-results
-  [initialInvestment]="initialInvestment"
-  [annualInvestment]="annualInvestment"
-  [expectedReturn]="expectedReturn"
-  [duration]="duration"
-/>
+<app-investment-results />
 } @else {
 <p class="center">Please enter some values and press "Calculate".</p>
 }
