@@ -1,15 +1,23 @@
 <table>
-    <thead>
-        <tr>
-            <td>Year</td>
-            <td>Investment Value</td>
-            <td>Interest (Year)</td>
-            <td>Total Interest</td>
-            <td>Invested Capital</td>
-        </tr>
-    </thead>
+  <thead>
+    <tr>
+      <td>Year</td>
+      <td>Investment Value</td>
+      <td>Interest (Year)</td>
+      <td>Total Interest</td>
+      <td>Invested Capital</td>
+    </tr>
+  </thead>
 
-    <tbody>
-        
-    </tbody>
+  <tbody>
+    @for (row of calculatedResults; track row.year) {
+    <tr>
+      <td>{{ row.year }}</td>
+      <td>{{ row.valueEndOfYear | currency }}</td>
+      <td>{{ row.interest | currency }}</td>
+      <td>{{ row.totalInterest | currency }}</td>
+      <td>{{ row.totalAmountInvested | currency }}</td>
+    </tr>
+    }
+  </tbody>
 </table>

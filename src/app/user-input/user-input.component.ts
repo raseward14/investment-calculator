@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+import { InvestmentResultsComponent } from '../investment-results/investment-results.component';
+import { InvestmentService } from '../investment.service';
 
 @Component({
   selector: 'app-user-input',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, InvestmentResultsComponent],
   templateUrl: './user-input.component.html',
   styleUrl: './user-input.component.css'
 })
@@ -14,12 +17,17 @@ export class UserInputComponent {
   expectedReturn = '';
   duration = '';
 
+  calculated = false;
+  private investmentService = inject(InvestmentService)
+  
   onSubmit() {
-    console.log({
-      "initial-investment": this.initialInvestment,
-      "annual-investment": this.annualInvestment,
-      "expectedReturn": this.expectedReturn,
-      "duration": this.duration
+    this.calculated = true;
+
+    this.investmentService.calculateInvestmentResults({
+      initialInvestment: this.initialInvestment,
+      annualInvestment: this.annualInvestment,
+      expectedReturn: this.expectedReturn,
+      duration: this.duration
     })
   }
 }
