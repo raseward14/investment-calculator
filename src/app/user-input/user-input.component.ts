@@ -12,10 +12,10 @@ import { InvestmentService } from '../investment.service';
   styleUrl: './user-input.component.css'
 })
 export class UserInputComponent {
-  initialInvestment = '';
-  annualInvestment = '';
-  expectedReturn = '';
-  duration = '';
+  enteredInitialInvestment = '0';
+  enteredAnnualInvestment = '0';
+  enteredExpectedReturn = '5';
+  enteredDuration = '10';
 
   calculated = false;
   private investmentService = inject(InvestmentService)
@@ -24,10 +24,10 @@ export class UserInputComponent {
     this.calculated = true;
 
     this.investmentService.calculateInvestmentResults({
-      initialInvestment: this.initialInvestment,
-      annualInvestment: this.annualInvestment,
-      expectedReturn: this.expectedReturn,
-      duration: this.duration
+      initialInvestment: this.enteredInitialInvestment,
+      annualInvestment: this.enteredAnnualInvestment,
+      expectedReturn: this.enteredExpectedReturn,
+      duration: this.enteredDuration
     })
   }
 }
