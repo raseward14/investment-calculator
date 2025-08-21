@@ -22,12 +22,6 @@ export class UserInputComponent {
   
   onSubmit() {
     this.calculated = true;
-    console.log({
-      initialInvestment: this.enteredInitialInvestment,
-      annualInvestment: this.enteredAnnualInvestment,
-      expectedReturn: this.enteredExpectedReturn,
-      duration: this.enteredDuration
-    })
 
     this.investmentService.calculateInvestmentResults({
       initialInvestment: this.enteredInitialInvestment,
