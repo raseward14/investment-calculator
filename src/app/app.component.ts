@@ -43,7 +43,8 @@ export class AppComponent {
       });
     }
 
-    console.log(annualData);
+    this.resultsData = annualData;
+    // console.log(annualData);
     //return annualData;
   }
 }
