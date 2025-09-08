@@ -15,4 +15,4 @@ import { UserInputModule } from './user-input/user-input.module';
   imports: [BrowserModule, UserInputModule],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

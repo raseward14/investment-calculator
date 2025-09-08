@@ -13,9 +13,7 @@ export class UserInputComponent {
   enteredExpectedReturn = signal('5');
   enteredDuration = signal('10');
 
-  // calculated = false;
-
-  constructor(private investmentService: InvestmentService) {}
+  constructor(private investmentService: InvestmentService) { }
   // private investmentService = inject(InvestmentService)
 
   onSubmit() {
